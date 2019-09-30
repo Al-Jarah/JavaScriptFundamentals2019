@@ -174,7 +174,7 @@ function testStrictNotEqual(a, b) {
 
 /***
  *  Refactor the code down below to use the logical && operator.
- *  The should return "Yes" when it is 6, 7, 8 and 9.
+ *  This should return "Yes" when it is 6, 7, 8 and 9.
  *  ```javascript
  *  testLogicalAnd(9); // should return "Yes"
  *  testLogicalAnd(6); // should return "Yes"

@@ -254,13 +254,12 @@ Thumbs.db
 
 # workspace
 .project
-.vscode/*
-!/.vscode/launch.json
 **/.vscode/*
 !**/.vscode/launch.json
 *.code*
 .idea
 .sublime*
+*.swp
 
 # to avoid merge conflicts
 package-lock.json
