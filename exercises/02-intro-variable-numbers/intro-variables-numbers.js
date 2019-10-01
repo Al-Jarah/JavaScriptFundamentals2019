@@ -1,3 +1,5 @@
+let log = console.log;
+
 //set myName variable to your name;
 function myName(name) {
   let myName = name;
@@ -69,11 +71,11 @@ function stringLength(str) {
  */
 
 function getLastCharacter(str) {
-  let lastCharacter = str.substring(0);
+  let last = str.charAt(str.length - 1);
 
-  return lastCharacter;
+  return last;
 }
-
+//log(getLastCharacter('eli'))
 /** Return the last part of a place name
  *
  *   i.e New York
@@ -121,7 +123,7 @@ function getLargerNumber(arg1, arg2) {
  */
 
 function replaceLastName(fullName, newLastName) {
-  let newFullName;
+  let newFullName = fullName.split(" ")[0] + " " + newLastName;
   return newFullName;
 }
 
@@ -131,20 +133,19 @@ function replaceLastName(fullName, newLastName) {
  */
 
 function capitalizeLastName(fullName) {
-  let capitalizeLastName = fullName.toUpperCase();
+  let firstName = fullName.split(" ")[0];
+  let lastName = fullName.split(" ")[1];
 
-  return capitalizeLastName;
+  let capitalizeLastName = lastName.charAt(0).toUpperCase() + lastName.slice(1);
+  return `${firstName} ${capitalizeLastName}`;
 }
-
 /***
  * Change below so that it will also compare data types
  *
  *
  */
 function compareEquality(a, b) {
-  if (a == b) {
-    if (a === b) {
-    }
+  if (a === b) {
     return "Equal";
   }
   return "Not Equal";
@@ -185,10 +186,10 @@ function testStrictNotEqual(a, b) {
  */
 
 function testLogicalAnd(num) {
-  if (num % 3 && num % !2) {
-    num = "no";
+  if (num % 3 && num != num %2) {
+    num = "No";
   } else {
-    num = "yes";
+    num = "Yes";
   }
   return num;
 }
@@ -203,14 +204,25 @@ function testLogicalAnd(num) {
  */
 
 function testLogicalOr(num) {
-  // code here
+  if (num == 20 || num == 25) {
+    num = "Yes";
+  }
+  else
+  {
+    num = "No";
+  }
+  return num;
 }
-
 /** Using the modulus operator determine if the argument is an even or odd number */
 
 function isEvenOrOdd(isEven) {
-  return isEven;
+  if (isEven %2 ) {
+    return false;
+  }
+    return true;
+
 }
+
 
 /****
  *  You are given a variable num:
@@ -229,7 +241,31 @@ function isEvenOrOdd(isEven) {
  * 
  *  *****/
 
-function caseInSwitch(num) {}
+function caseInSwitch(num) {
+  switch (num) {
+    case 1:
+      return "ONE";
+    case 2:
+      return "TWO";
+    case 3:
+      return "THREE";
+    case 4:
+      return "FOUR";
+    case 5:
+      return "FIVE";
+    case 6:
+      return "SIX";
+    case 7:
+      return "SEVEN";
+    case 8:
+      return "EIGHT";
+    case 9:
+      return "NINE";
+    default:
+      return "PLEASE TRY AGAIN";
+  }
+}
+
 
 /***
  *  Create a function named timesFive
@@ -242,7 +278,14 @@ function caseInSwitch(num) {}
  *   timesFive() should return 5
  *
  */
-
+function timesFive(num) {
+  if(num === true){
+  num *= 5;
+  return num;
+  }
+    return 5;
+}
+log(timesFive());
 /***
  *  create a function called lowerCaseName that will return the string lowerCased
  *   create two if statements. The first if statement will check for null or undefined and exit out of
@@ -254,7 +297,17 @@ function caseInSwitch(num) {}
  *
  *
  */
-function lowerCaseName(str) {}
+function lowerCaseName(str) {
+  if (undefined){
+    console.log("undefined");}
+      if (!null || !undefined) {
+        let lowerCase = str.toLowerCase();
+        return lowerCase;
+      }
+      return;
+}
+
+
 
 let myExports = {
   myName,
@@ -279,6 +332,7 @@ let myExports = {
   timesFive: () => {},
   lowerCaseName: () => {}
 };
+
 try {
   //eslint-disable-next-line no-undef
   if (timesFive) myExports.timesFive = timesFive;
