@@ -6,6 +6,7 @@
 function createAnArray() {
   let array = ["JavaScript"]; // Do not change this line
   /* Add three more items to the array here */
+  array.push("eli", "joe", "josh");
   return array;
 }
 
@@ -17,7 +18,7 @@ function createAnArray() {
 
 function accessingAnArray() {
   const cars = ["BMW", "Honda", "Civic"]; // Do not change this line
-  // Code here
+  return cars[0];
 }
 
 /***
@@ -32,9 +33,14 @@ function accessingAnArray() {
  */
 
 function addFunctionsIntoArray() {
-  // Create and return an array here
+  const add = (a,b) => a + b;
+  const subtract = (a,b) => a - b;
+  let arr = [];
+   arr.push(add);
+   arr.push(subtract);
+   return arr;
+// Create and return an array here
 }
-
 /**
  * Loop through the array using a for loop (or for ... of loop) and return the highest number
  * @param  { array }
@@ -44,8 +50,13 @@ function addFunctionsIntoArray() {
  * highestNumber([-1, -5, -4]) // -1
  *
  **/
-function highestNumber(array) {}
-
+function highestNumber(array) {
+  
+  for (array of array)
+  
+  return Math.max(array);
+}
+console.log(highestNumber([-1, -5, -4]));
 /**
  * Combine an array by using the spread operator
  * @param  {array} array1
