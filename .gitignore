@@ -265,5 +265,8 @@ Thumbs.db
 package-lock.json
 yarn.lock
 
+# generated from exercises / challenges
+challenges/10-7-challenges/people-output.csv
+
 # misc
 *NOCOMMIT*

@@ -9,7 +9,12 @@
  *
  *  */
 
-function isEvenOrOdd(number) {}
+function isEvenOrOdd(number) {
+  if (number % 2) {
+    return 'Odd';
+  }
+  return 'Even';
+}
 
 /****
  *  Create a function that returns a function.
