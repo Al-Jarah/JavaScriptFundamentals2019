@@ -1,6 +1,5 @@
-const path = require("path");
 const fs = require("fs");
-
+const jFile = require("./people.json");
 
 /**
  *  CreateGraduateObject function takes in several arguments and returns an object.
@@ -28,9 +27,9 @@ function createGraduateObject(name, graduationYear, skills, links) {
   graduate = {
     name: "Elijah Brown",
     graduationYear: "2019",
-    skills:["JavaScript, React, CSS"],
+    skills: ["JavaScript, React, CSS"],
     links: {
-    github: "https://github.com/al-jarah/profile"
+      github: "https://github.com/al-jarah/profile"
     }
   };
 
@@ -63,17 +62,18 @@ console.log(createGraduateObject());
  */
 
 function createCsvString(people) {
-  for(people in people){
-    people = {"Name","Gender","Location","DOB"\n"Georgia Wagner","female","Skookumchuck, VA","1977-02-26"\n"Meredith Holt","female","Coltman, WV","1957-09-22"\n"Cora Bradley","female","Fairland, GA","1995-07-19"\n"Carol Scott","female","Two Brooks, WI","1973-08-17"\n"Vincent Silva","male","Brookhaven, DC","1959-07-30"\n"Clifton Armstrong","male","Cimarron, WA","1971-10-08"\n"Deanna Stanley","female","Morgan Mill, OK","1971-04-20"\n"Sidney Walker","male","Scottsville, KS","1987-01-05"\n"Guillermo Gross","male","Del Rey Oaks, RI","1998-05-31"\n"Daniel Steele","male","Martins Corner, TX","1963-07-09"\n"Brett Jimenez","male","East Waterford, ME","1958-05-06"\n}
-  people = JSON.parse(people.json);
+  people = jFile;
+  for (people of jFile) {
 
-  return people;
+    //people = JSON.parse(people.json);
+
+    console.log(people);
   }
-people = {};
-
 }
 
 module.exports = {
   createGraduateObject,
   createCsvString
 };
+
+

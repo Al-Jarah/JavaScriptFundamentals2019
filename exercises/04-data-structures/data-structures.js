@@ -1,3 +1,5 @@
+let A = console.log;
+
 /**
  * Add three more programming languages and return the languages array
  * @return {array} an array with four items
@@ -66,10 +68,10 @@ console.log(highestNumber([-1, -5, -4]));
 function combineArray(array1, array2) {
   array1 = ["Japan", "China", "India"];
   array2 = ["USA", "UK"];
-  var newArr = array1.concat(array2);
-  console.log(combineArray(newArr));
+  let newArr = array1.concat(array2);
+  return newArr;
 }
-
+console.log(combineArray());
 /**
  * Given an array of objects, where each object has an ID,
  * loop through an array using a for loop (or for ... of loop).
@@ -123,6 +125,7 @@ function findAndAbort(arr, id) {
   }
   return obj;
 }
+console.log(findAndAbort(people, 40));
 
 /**
  * A palindrome is a word, phrase, or sequence that reads the same backward as forward, e.g., madam or racecar.
@@ -133,18 +136,29 @@ function findAndAbort(arr, id) {
  *
  */
 
-function isPalindrome(str) {}
+function isPalindrome(str) {
+  return (
+    str
+      .split("")
+      .reverse("")
+      .join("") === str
+  );
+}
+console.log(isPalindrome("eye"));
 
 /***
  * Use sets to remove duplicate elements from an array
  * @return {array}
  */
 
-function removeDuplicates() {
-  let numbers = [2, 3, 4, 4, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 5, 32, 3, 4, 5]; // You can change this line
+function removeDuplicates(numbers) {
+  numbers = [2, 3, 4, 4, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 5, 32, 3, 4, 5];
 
-  /** Return the an array of unique values */
-  return;
+  let newNumbers = new Set(numbers);
+
+  let backToArray = [...newNumbers];
+
+  return backToArray;
 }
 
 /**
@@ -159,8 +173,10 @@ function accessObject() {
     shoes: "cleats"
   };
   // Only change code below this line
-  return;
+
+  return clothes.hat;
 }
+console.log(accessObject());
 
 /**
  * A palindrome is a word, phrase, or sequence that reads the same backward as forward, e.g., madam or racecar.
@@ -170,13 +186,6 @@ function accessObject() {
  * @return {Boolean}
  *
  */
-
-function isPalindrome(str) {
-  let splitString = str.split("", true);
-  let reverseArray = splitString.reverse();
-  let joinArray = reverseArray.join("", true);
-  return joinArray;
-}
 
 /***
  * Use sets to remove duplicate elements from an array
@@ -206,7 +215,7 @@ function accessObject() {
   };
   // Only change code below this line
 
-  return clothes.hat;
+  return "hi";
 }
 console.log(accessObject());
 /**
@@ -271,7 +280,11 @@ function returnObjectProperties() {
  * @return {object} obj1 and obj2 combined
  */
 
-function combineObject(obj1, obj2) {}
+function combineObject(obj1, obj2) {
+
+  return {...obj1, ...obj2};
+}
+console.log(combineObject({ josh: "wayne" }, { name: "wayne" }));
 
 /**
  * Find a record with the matching id in a collection of records.
@@ -322,6 +335,7 @@ function updateRecords(id, prop, value) {
   // Only change the code after this line
   // Logic Here
 }
+console.log();
 
 module.exports = {
   createAnArray,
