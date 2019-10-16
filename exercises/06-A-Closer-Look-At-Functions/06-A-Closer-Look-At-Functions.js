@@ -7,7 +7,11 @@
  *
  */
 
-function objectMaker() {}
+function objectMaker(value) {
+  return {
+    ["name"]: value
+  };
+}
 
 /**
  *  As a programmer, I would like to be able to call on a function that returns an object that will allow me to
@@ -37,10 +41,18 @@ function objectMaker() {}
 
 function groceryList() {
   let groceryItems = [];
-
-  return {};
+  return {
+    getList: () => {
+      return groceryItems;
+    },
+    add: groceryListObj => {
+      groceryItems.push(groceryListObj);
+    },
+    remove: groceryListObj => {
+      groceryItems.splice(groceryListObj);
+    }
+  };
 }
-
 /**
  *  slides
  * https://slides.com/accjavascript/deck-2-11#/3
@@ -116,8 +128,12 @@ const guessingGame = numberOfRounds => {};
  * @param {number} a
  * @param {number} b
  */
-const multiplier = (a, b) => {};
-
+const multiplier = (a, b) => {
+  if (b == undefined) {
+    return b => a * b;
+  }
+  return a * b;
+};
 /** Currying End */
 
 /*** Callback Start */

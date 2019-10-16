@@ -86,3 +86,21 @@ function createDogObject() {
  *
  *  @return {array}
  */
+const outerValue = "Ninja";
+
+let later;
+
+const outerFunc = () => {
+  const innerValue = "Samurai";
+
+  const innerFunc = () => {
+    if (outerValue) console.log(outerValue); // Ninja
+    if (innerValue) console.log(innerValue); // Samurai
+  };
+
+  later = innerFunc;
+};
+
+outerFunc();
+
+later();

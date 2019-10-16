@@ -1,5 +1,3 @@
-let A = console.log;
-
 /**
  * Add three more programming languages and return the languages array
  * @return {array} an array with four items
@@ -55,7 +53,6 @@ function addFunctionsIntoArray() {
 function highestNumber(array) {
   for (array of array) return Math.max(array);
 }
-console.log(highestNumber([-1, -5, -4]));
 /**
  * Combine an array by using the spread operator
  * @param  {array} array1
@@ -68,10 +65,10 @@ console.log(highestNumber([-1, -5, -4]));
 function combineArray(array1, array2) {
   array1 = ["Japan", "China", "India"];
   array2 = ["USA", "UK"];
-  let newArr = array1.concat(array2);
+  const newArr = array1.concat(array2);
   return newArr;
 }
-console.log(combineArray());
+
 /**
  * Given an array of objects, where each object has an ID,
  * loop through an array using a for loop (or for ... of loop).
@@ -125,7 +122,27 @@ function findAndAbort(arr, id) {
   }
   return obj;
 }
-console.log(findAndAbort(people, 40));
+
+/**
+ * A palindrome is a word, phrase, or sequence that reads the same backward as forward, e.g., madam or racecar.
+ * Checks to see if a string is a palindrome.
+ * Use the split and join methods to solve this problem
+ * @param  {[string]}  string
+ * @return {Boolean}
+ *
+ */
+
+/***
+ * Use sets to remove duplicate elements from an array
+ * @return {array}
+ */
+
+function removeDuplicates() {
+  let numbers = [2, 3, 4, 4, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 5, 32, 3, 4, 5]; // You can change this line
+
+  /** Return the an array of unique values */
+  return;
+}
 
 /**
  * A palindrome is a word, phrase, or sequence that reads the same backward as forward, e.g., madam or racecar.
@@ -137,14 +154,11 @@ console.log(findAndAbort(people, 40));
  */
 
 function isPalindrome(str) {
-  return (
-    str
-      .split("")
-      .reverse("")
-      .join("") === str
-  );
+  let splitString = str.split("", true);
+  let reverseArray = splitString.reverse();
+  let joinArray = reverseArray.join("", true);
+  return joinArray;
 }
-console.log(isPalindrome("eye"));
 
 /***
  * Use sets to remove duplicate elements from an array
@@ -152,7 +166,7 @@ console.log(isPalindrome("eye"));
  */
 
 function removeDuplicates(numbers) {
-  numbers = [2, 3, 4, 4, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 5, 32, 3, 4, 5];
+
 
   let newNumbers = new Set(numbers);
 
@@ -160,7 +174,6 @@ function removeDuplicates(numbers) {
 
   return backToArray;
 }
-
 /**
  * Return the value for hat inside clothes (which should be ball cap)
  * @return {string} type of hat
@@ -176,48 +189,7 @@ function accessObject() {
 
   return clothes.hat;
 }
-console.log(accessObject());
 
-/**
- * A palindrome is a word, phrase, or sequence that reads the same backward as forward, e.g., madam or racecar.
- * Checks to see if a string is a palindrome.
- * Use the split and join methods to solve this problem
- * @param  {[string]}  string
- * @return {Boolean}
- *
- */
-
-/***
- * Use sets to remove duplicate elements from an array
- * @return {array}
- */
-
-function removeDuplicates(numbers) {
-  numbers = [2, 3, 4, 4, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 5, 32, 3, 4, 5];
-
-  let newNumbers = new Set(numbers);
-
-  let backToArray = [...newNumbers];
-
-  return backToArray;
-}
-console.log(removeDuplicates());
-/**
- * Return the value for hat inside clothes (which should be ball cap)
- * @return {string} type of hat
- */
-function accessObject() {
-  // Do not change clothes here
-  let clothes = {
-    hat: "ballcap",
-    shirt: "jersey",
-    shoes: "cleats"
-  };
-  // Only change code below this line
-
-  return "hi";
-}
-console.log(accessObject());
 /**
  *   Update the object to contain your first and last name.
  *   Add at least three skills inside the array
@@ -232,7 +204,7 @@ function createStudentObject() {
     skills: []
   };
   // Add code here
-  student = `${"Elijah Brown"}`;
+  student = `${"Brown"}`;
   return student;
 }
 console.log(createStudentObject());
@@ -280,25 +252,12 @@ function returnObjectProperties() {
  * @return {object} obj1 and obj2 combined
  */
 
-function combineObject(obj1, obj2) {
-
-  return {...obj1, ...obj2};
-}
-console.log(combineObject({ josh: "wayne" }, { name: "wayne" }));
+function combineObject(obj1, obj2) {}
 
 /**
  * Find a record with the matching id in a collection of records.
  * If the value is truthy, then swap out one of the records values with a new property.
  * If the original value is an array, it should add the new value to the array.
- *
- *  If prop is "tracks" but the album doesn't have a "tracks" property,
- *  create an empty array before adding the new value to the album's corresponding property
- *
- *  If prop is "tracks" and value isn't empty (""), push the value
- *  onto the end of the album's existing tracks array
- *
- *  If value is empty (""), delete the given prop property from the album.
- *
  * @param {Number} id what record to change
  * @param {String} property what property to replace
  * @param {String} value new value to replace with
@@ -306,7 +265,7 @@ console.log(combineObject({ josh: "wayne" }, { name: "wayne" }));
  *  @example
  *  updateRecords(5439, "artist", "ABBA"); // artist should be "ABBA"
  *  updateRecords(5439, "tracks", "Take a Chance on Me"); // tracks should be ["Old Track", "Take a Chance on Me""]
- *  updateRecords(2548, "artist", ""); // artist should not be set
+ *  updateRecords(2548, "artist", ""); // artist should not change
  *  updateRecords(1245, "tracks", "Addicted to Love"); // tracks should be ["Old Track", "Addicted to Love""]
  *  updateRecords(2468, "tracks", "Free"); // tracks should have "1999"as the first element.
  *  updateRecords(2548, "tracks", ""); // tracks should not change
@@ -344,7 +303,6 @@ function updateRecords(id, prop, value) {
   // Only change the code after this line
   // Logic Here
 }
-console.log();
 
 module.exports = {
   createAnArray,

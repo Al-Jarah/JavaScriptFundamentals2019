@@ -35,7 +35,7 @@ describe("Functions", () => {
   });
 });
 
-describe("groceryList", () => {
+describe.only("groceryList", () => {
   it("should add an item to the grocery list when the method add is called", () => {
     const groceryListObj = groceryList();
     groceryListObj.add("pears");

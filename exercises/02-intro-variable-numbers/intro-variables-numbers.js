@@ -285,7 +285,6 @@ function timesFive(num) {
   }
     return 5;
 }
-log(timesFive());
 /***
  *  create a function called lowerCaseName that will return the string lowerCased
  *   create two if statements. The first if statement will check for null or undefined and exit out of

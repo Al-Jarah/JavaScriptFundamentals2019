@@ -36,7 +36,9 @@ function functionMaker() {}
  *
  */
 
-function confirmEnding(str, target) {}
+function confirmEnding(str, target) {
+
+}
 
 module.exports = {
   isEvenOrOdd,
