@@ -34,7 +34,7 @@ function removeElement(arr) {
  */
 
 function truncateString(str, num) {
-  return str.substring(0, num) + "...";
+  return str.length > num ? str.substring(0, num) + "..." : str;
 }
 
 module.exports = {
