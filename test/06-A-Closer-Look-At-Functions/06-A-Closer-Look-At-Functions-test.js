@@ -39,7 +39,7 @@ describe("groceryList", () => {
     expect(groceryListObj.getList().length).to.equal(1);
   });
 
-describe.only("groceryList", () => {
+describe("groceryList", () => {
   it("should add an item to the grocery list when the method add is called", () => {
     const groceryListObj = groceryList();
     groceryListObj.add("pears");

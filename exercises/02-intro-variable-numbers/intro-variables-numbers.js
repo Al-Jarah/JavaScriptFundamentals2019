@@ -186,7 +186,7 @@ function testStrictNotEqual(a, b) {
  */
 
 function testLogicalAnd(num) {
-  if (num % 3 && num != num %2) {
+  if (num % 3 && num != num % 2) {
     num = "No";
   } else {
     num = "Yes";
@@ -206,9 +206,7 @@ function testLogicalAnd(num) {
 function testLogicalOr(num) {
   if (num == 20 || num == 25) {
     num = "Yes";
-  }
-  else
-  {
+  } else {
     num = "No";
   }
   return num;
@@ -216,13 +214,11 @@ function testLogicalOr(num) {
 /** Using the modulus operator determine if the argument is an even or odd number */
 
 function isEvenOrOdd(isEven) {
-  if (isEven %2 ) {
+  if (isEven % 2) {
     return false;
   }
-    return true;
-
+  return true;
 }
-
 
 /****
  *  You are given a variable num:
@@ -266,7 +262,6 @@ function caseInSwitch(num) {
   }
 }
 
-
 /***
  *  Create a function named timesFive
  *  should multiply the argument by 5
@@ -279,11 +274,11 @@ function caseInSwitch(num) {
  *
  */
 function timesFive(num) {
-  if(num === true){
-  num *= 5;
-  return num;
+  if (num === true) {
+    num *= 5;
+    return num;
   }
-    return 5;
+  return 5;
 }
 /***
  *  create a function called lowerCaseName that will return the string lowerCased
@@ -297,16 +292,15 @@ function timesFive(num) {
  *
  */
 function lowerCaseName(str) {
-  if (undefined){
-    console.log("undefined");}
-      if (!null || !undefined) {
-        let lowerCase = str.toLowerCase();
-        return lowerCase;
-      }
-      return;
+  if (undefined) {
+    console.log("undefined");
+  }
+  if (!null || !undefined) {
+    let lowerCase = str.toLowerCase();
+    return lowerCase;
+  }
+  return;
 }
-
-
 
 let myExports = {
   myName,

@@ -166,8 +166,6 @@ function isPalindrome(str) {
  */
 
 function removeDuplicates(numbers) {
-
-
   let newNumbers = new Set(numbers);
 
   let backToArray = [...newNumbers];
@@ -207,7 +205,7 @@ function createStudentObject() {
   student = `${"Brown"}`;
   return student;
 }
-console.log(createStudentObject());
+
 /**
  * Make an object "myDog" that represents a dog. It should contain the properties
  * "name", "legs", "tails" and "owners". Each should have a value.
