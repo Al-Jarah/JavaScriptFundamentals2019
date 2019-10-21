@@ -35,7 +35,9 @@ function getRelativeTime(seconds) {}
  * roundToNearestHundredth(14.511); // 14.51
  * roundToNearestHundredth(14.499); // 14.5
  */
-function roundToNearestHundredth(num) {}
+function roundToNearestHundredth(num) {
+
+}
 
 // Ignore this. It is for the tests.
 module.exports = {
