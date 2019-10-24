@@ -35,6 +35,7 @@ Follow the guide [Creating a pull request from a fork](https://help.github.com/a
 ## Resources
 
 - [Syllabus](https://docs.google.com/document/d/1x3Qeln21_8PWtiAf3aFKyUXlxgPz_TpDNgIy_yePPJQ/edit?usp=sharing)
+- Projects: [Project 1: Hangman](docs/Project1Description.md)
 - [Slides](https://slides.com/accjavascript/decks/2019-javascript-fundamentals)
 - Installation Guide: [Mac](docs/InstallationGuideMac.md) | [Windows](docs/InstallationGuideWindows.md)
 - [MDN](https://developer.mozilla.org/en-US/) (Unofficial JavaScript Manual)
