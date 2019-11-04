@@ -1,5 +1,3 @@
-let log = console.log;
-
 //set myName variable to your name;
 function myName(name) {
   let myName = name;
@@ -17,8 +15,7 @@ function setTeachersNames(teachersName) {
 
 /*** return the sum of both arguments  ***/
 function add(a, b) {
-  let sum;
-  sum = a + b;
+  let sum = a + b;
   return sum;
 }
 
@@ -71,9 +68,9 @@ function stringLength(str) {
  */
 
 function getLastCharacter(str) {
-  let last = str.charAt(str.length - 1);
+  let lastCharacter = str.charAt(str.length - 1);
 
-  return last;
+  return lastCharacter;
 }
 //log(getLastCharacter('eli'))
 /** Return the last part of a place name
@@ -89,12 +86,11 @@ function getLastCharacter(str) {
  */
 
 function getLastWordInPlaceName(place) {
-  let index = place.indexOf(" ");
-  let newPlace = place.substring(index + 1);
+  let newPlace = place.substring(place.indexOf(" ") + 1);
 
   return newPlace;
 }
-//stop here
+
 /***
  *  Using Conditonal logic compare both arguments and return the largest argument
  *
@@ -102,11 +98,10 @@ function getLastWordInPlaceName(place) {
 
 function getLargerNumber(arg1, arg2) {
   let largestNumber = arg1 && arg2;
-  if (arg1 > arg2) {
-    return (arg1 = largestNumber);
-  } else if (arg2 > arg1) {
-    return (arg2 = largestNumber);
-  }
+
+  if (arg1 > arg2) largestNumber = arg1;
+  else largestNumber = arg2;
+
   return largestNumber;
 }
 
@@ -131,13 +126,13 @@ function replaceLastName(fullName, newLastName) {
  *  Capitalize the first letter in a last name
  *  i.e John smith -> John Smith
  */
-
 function capitalizeLastName(fullName) {
-  let firstName = fullName.split(" ")[0];
-  let lastName = fullName.split(" ")[1];
+  const firstName = fullName.split(" ")[0];
+  const lastName = fullName.split(" ")[1];
+  console.log(lastname);
 
-  let capitalizeLastName = lastName.charAt(0).toUpperCase() + lastName.slice(1);
-  return `${firstName} ${capitalizeLastName}`;
+  const newlastname = lastName.charAt(0).toUpperCase() + lastName.slice(1);
+  return `${firstName} ${newlastname}`;
 }
 /***
  * Change below so that it will also compare data types
@@ -186,12 +181,7 @@ function testStrictNotEqual(a, b) {
  */
 
 function testLogicalAnd(num) {
-  if (num % 3 && num != num % 2) {
-    num = "No";
-  } else {
-    num = "Yes";
-  }
-  return num;
+  return num > 5 && num < 10 ? "Yes" : "No";
 }
 
 /**
@@ -204,12 +194,8 @@ function testLogicalAnd(num) {
  */
 
 function testLogicalOr(num) {
-  if (num == 20 || num == 25) {
-    num = "Yes";
-  } else {
-    num = "No";
-  }
-  return num;
+  if (num == 20 || num == 25) return "Yes";
+  return "No";
 }
 /** Using the modulus operator determine if the argument is an even or odd number */
 
@@ -273,17 +259,10 @@ function caseInSwitch(num) {
  *   timesFive() should return 5
  *
  */
-function timesFive(num) {
-  if (num === true) {
-    num *= 5;
-    return num;
-  }
-  return 5;
-}
+const timesFive = (num = 1) => num * 5;
 /***
  *  create a function called lowerCaseName that will return the string lowerCased
- *   create two if statements. The first if statement will check for null or undefined and exit out of
- *   the function early.
+ *   create two if statements. The first if statement will check for null or undefined and exit out of the function early.
  *   the second if statement will return the argument in lowercase format
  *     i.e Hamburger --> hamburger
  *
@@ -291,16 +270,10 @@ function timesFive(num) {
  *
  *
  */
-function lowerCaseName(str) {
-  if (undefined) {
-    console.log("undefined");
-  }
-  if (!null || !undefined) {
-    let lowerCase = str.toLowerCase();
-    return lowerCase;
-  }
-  return;
-}
+const lowerCaseName = (str) => {
+  if (!str) return;
+  return str.toLowerCase();
+};
 
 let myExports = {
   myName,

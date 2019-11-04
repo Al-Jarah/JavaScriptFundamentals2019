@@ -63,21 +63,13 @@ function groceryList() {
  * @returns {Object} an object that has two methods. See comments below.
  */
 const calculator = () => {
-  /**
-   * Create a private variable called "sum"
-   * @var {number}
-   */
-  /**
-   * Return an object that has two methods:
-   *
-   * 1. The first is a "setter" function that a.) accepts a parameter of type number and
-   *    b.) adds that number to the "sum" above.
-   * @param {number}
-   *
-   * 2. The second function is a "getter" function
-   * that should return the value of "sum" above.
-   * @returns {number} the value of sum
-   */
+  let sum = 0;
+  return {
+    add: number => {
+      sum = sum + number;
+    },
+    get: () => sum
+  };
 };
 
 /**
@@ -105,7 +97,19 @@ const calculator = () => {
  * guessRound2(1); // "No more guesses. The answer was 0"
  */
 
-const guessingGame = numberOfRounds => {};
+const guessingGame = numberOfRounds => {
+  const answer = Math.floor(Math.random() * (10 + 1));
+  let count = 0;
+
+  return guess => {
+    count += 1;
+    if (count >= numberOfRounds)
+      return "No more guesses. The answer was " + answer;
+    else if (guess < answer) return "You're too low!";
+    else if (guess > answer) return "You're too high!";
+    else if (guess === answer) return "You got it!";
+  };
+};
 
 /** CLOSURES END */
 
@@ -149,7 +153,9 @@ const multiplier = (a, b) => {
  *  - Eddy
  * @param {string} name instuctor name
  */
-const printer = () => {};
+const printer = name => {
+  console.log(`- ${name}\n`);
+};
 
 /**
  * Loops through the array of strings
@@ -157,7 +163,11 @@ const printer = () => {};
  * @param {array}
  * @param {function} callback printer function
  */
-const printNames = () => {};
+const printNames = (array, callback) => {
+  for (let item of array) {
+    callback(item);
+  }
+};
 
 /*** callback ends */
 
@@ -172,9 +182,8 @@ const printNames = () => {};
  * @param {function} callback
  */
 const forEach = (arr, callback) => {
-  for(let i = 0; i < arr.length ; i++){
-
-  callback(arr[i], i, arr);
+  for (let i = 0; i < arr.length; i++) {
+    callback(arr[i], i, arr);
   }
 };
 
@@ -186,8 +195,15 @@ const forEach = (arr, callback) => {
  *   showFirstAndLast(['colt','matt', 'tim', 'udemy']); // ["ct", "mt", "tm", "uy"]
  *   showFirstAndLast(['hi', 'goodbye', 'smile']) // ['hi', 'ge', 'se']
  */
-const showFirstAndLast = arr => {};
-
+const showFirstAndLast = arr => {
+  let newArray = [];
+  for (let item of arr) {
+    const first = item[0];
+    const last = item[item.length - 1];
+    newArray.push(`${first}${last}`);
+  }
+  return newArray;
+};
 /***ForEach ends */
 
 /**
@@ -198,10 +214,12 @@ const showFirstAndLast = arr => {};
  * @returns {array} new array
  */
 const map = (arr, callback) => {
-  let newArray =[];
-for(let i = 0; i > arr.length; i++){
-  newArray.push(callback(are[i], i, arr));
-}
+  let newArray = [];
+  for (let i = 0; i > arr.length; i++) {
+    let result = callback(are[i], i, arr);
+    newArray.push(result);
+  }
+  return newArray;
 };
 
 /**
@@ -209,9 +227,10 @@ for(let i = 0; i > arr.length; i++){
  * @param {array} arr an array of numbers e.g. [1, 3, 5]
  * @returns {array} new array, with each value doubled e.g. [2, 5, 10]
  */
-const doubleValues = (arr) => {
-
-  return arr.map(number => number * 2);
+const doubleValues = arr => {
+  return arr.map(num => {
+    return num * 2;
+  });
 };
 
 /**
@@ -232,8 +251,11 @@ const doubleValues = (arr) => {
  * ];
  * extractKey(arrayOfNames, 'name'); // ['Ellie', 'Tim', 'Matt', 'Colt']
  */
-const extractKey = (arr, key) => {};
-
+const extractKey = (arr, key) => {
+  return arr.map(row => {
+    return row[key];
+  });
+};
 /**
  * Build your own filter function
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
@@ -241,7 +263,11 @@ const extractKey = (arr, key) => {};
  * @param {function} callback
  * @returns {mixed} a array of values with the values with some of the values removed
  */
-const filter = (arr, callback) => {};
+const filter = (arr, callback) => {
+  for (let i = 0; i < arr.length; i++) {
+    callback();
+  }
+};
 
 /**
  * Delete the matching user from an array of user objects
@@ -271,7 +297,11 @@ const deleteUser = (arr, id) => {};
  * @param {function} callback
  * @returns {mixed} a single value in the array
  */
-const find = (arr, callback) => {};
+const find = (arr, callback) => {
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i], i, arr)) return arr[i];
+  }
+};
 
 /**
  * Find and return the matching user in an array of user objects
@@ -292,7 +322,9 @@ const find = (arr, callback) => {};
  * findUser(users, 1025);
  * // { id: 1025, username:"newyorkfarmer", email: "johndoe@example.com" }
  */
-const findUser = (arr, id) => {};
+const findUser = (arr, id) => {
+  return arr.find(user => user.id === true);
+};
 
 /**
  * Given an array of numbers, return the sum
@@ -302,14 +334,25 @@ const findUser = (arr, id) => {};
  *  addItems([1,5,6]) // 12
  *  addItems([1,-2,-3]) // -4
  */
-const addItems = arr => {};
+const addItems = arr => {
+  let sum = arr.reduce((total, num) => {
+    return total + num;
+  }, 0);
+  return sum;
+};
 
 /**
  * Create a function that flattens an array (that is, it should "unnest" a nested array).
  * @param {array} array e.g. `[[1, 3], [5, 10]]`
  * @returns {array} new, flattened array e.g. `[1, 3, 5, 10]`
  */
-const flattenArray = array => {};
+const flattenArray = array => {
+  let flattenedArray = array.reduce((acc, elements) => {
+    array = [...acc, ...elements];
+    return acc;
+  });
+  return flattenedArray;
+};
 
 /**
  * Create a function that tallies the number of each kind of "thing" within the array
@@ -319,7 +362,12 @@ const flattenArray = array => {};
  *   let fruits = ['Apple', 'Orange', 'Apple', 'Blueberry', 'Grape', 'Grape'];
  *   generateTally(generateTally); // {Apple: 2, Orange: 1, Blueberry: 1, Grape: 2}
  */
-const generateTally = array => {};
+const generateTally = array => {
+  let tally =  array.reduce((arr) =>{
+    arr[1]= arr
+    return tally
+  });
+};
 
 /**
  * Create a function, that when given an array of object literals, will index the object literals by a single column
@@ -343,7 +391,13 @@ const generateTally = array => {};
  *   456: {id, 456, name: 'Rachel', age: 35}
  * }
  */
-const arrayToObject = arr => {};
+const arrayToObject = arr => {
+  let obj = arr.reduce((acc, val) => {
+    acc[val.id] = val;
+    return acc;
+  }, {});
+  return obj;
+};
 
 module.exports = {
   objectMaker,

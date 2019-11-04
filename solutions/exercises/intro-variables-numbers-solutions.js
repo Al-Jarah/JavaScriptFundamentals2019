@@ -126,7 +126,6 @@ function replaceLastName(fullName, newLastName) {
  *  Capitalize the first letter in a last name
  *  i.e John smith -> John Smith
  */
-
 function capitalizeLastName(fullName) {
   const index = fullName.indexOf(" ") + 1;
   const firstName = fullName.substring(0, index);
