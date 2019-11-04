@@ -242,3 +242,107 @@ const extractKey = (arr, key) => {
 };
 // Solution 2
 const extractKey = (arr, key) => arr.map(row => row[key]);
+
+/**
+ * Build your own filter function
+ * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+ * @param {array} arr
+ * @param {function} callback
+ * @returns {mixed} a array of values with the values with some of the values removed
+ */
+const filter = (arr, callback) => {
+  let newArray = [];
+  for (var i = 0; i < arr.length; i++) {
+    if (callback(arr[i], i, arr)) newArray.push(arr[i]);
+  }
+  return newArray;
+};
+
+/**
+ * Delete the matching user from an array of user objects
+ * @param {array} arr array of objects, where each object represents a user
+ * @param {number} id the user's id
+ * @returns {object} the array of user objects, but the user object with the matching id is removed
+ *
+ * @example
+ * const users = [{
+ *  id: 1024,
+ *  username: "smile134",
+ *  email: "smile134@example.com"
+ * },{
+ *  id: 1025,
+ *  username: "newyorkfarmer",
+ *  email: "johndoe@example.com"
+ * }]
+ * deleteUser(users, 1025);
+ * // [{ id: 1024, username:"smile134", email: "smile134@example.com" }]
+ */
+
+// Solution 1
+const deleteUser = (arr, id) => {
+  return arr.filter(user => {
+    return user.id !== id;
+  });
+};
+// Solution 2
+const deleteUser = (arr, id) => arr.filter(user => user.id !== id);
+
+/**
+ * Build your own find function
+ * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+ * @param {array} arr
+ * @param {function} callback
+ * @returns {mixed} a single value in the array
+ */
+const find = (arr, callback) => {
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i], i, arr)) return arr[i];
+  }
+};
+
+/**
+ * Find and return the matching user in an array of user objects
+ * @param {array} arr array of objects, where each object represents a user
+ * @param {number} id the user's id
+ * @returns {object} the user object that has the matching id
+ *
+ * @example
+ * const users = [{
+ *  id: 1024,
+ *  username: "smile134",
+ *  email: "smile134@example.com"
+ * },{
+ *  id: 1025,
+ *  username: "newyorkfarmer",
+ *  email: "johndoe@example.com"
+ * }]
+ * findUser(users, 1025);
+ * // { id: 1025, username:"newyorkfarmer", email: "johndoe@example.com" }
+ */
+
+// Solution 1
+const findUser = (arr, id) => {
+  return arr.find(user => {
+    return user.id === id;
+  });
+};
+// Solution 2
+const findUser = (arr, id) => arr.find(user => user.id === id);
+
+/**
+ * Given an array of numbers, return the sum
+ * @param {array} arr an array of numbers, e.g. `[1, 2, 3]`
+ * @returns sum
+ * @example
+ *  addItems([1,5,6]) // 12
+ *  addItems([1,-2,-3]) // -4
+ */
+
+// Solution 1
+const addItems = arr => {
+  return arr.reduce((sum, number) => {
+    return sum + number;
+  }, 0);
+};
+// Solution 2
+const addItems = arr => arr.reduce((sum, number) => sum + number);

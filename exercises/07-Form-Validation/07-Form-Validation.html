@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Title Page-->
+    <title>Albany Can Code Registration</title>
+
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet" media="all" />
+  </head>
+
+  <body>
+    <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+      <div class="wrapper wrapper--w680">
+        <div class="card card-1">
+          <div class="card-heading"></div>
+          <div class="card-body">
+            <h2 class="title">Sign Up For NYC Tour</h2>
+            <form
+              method="POST"
+              onsubmit="return formValidation()"
+              name="form"
+              id="form"
+            >
+              <div class="input-group">
+                <input
+                  class="input--style-1"
+                  type="text"
+                  placeholder="NAME"
+                  name="customerName"
+                  id="name"
+                />
+              </div>
+              <div class="row row-space">
+                <div class="col-2">
+                  <div class="input-group">
+                    <input
+                      class="input--style-1"
+                      type="text"
+                      placeholder="BIRTHDATE"
+                      name="birthday"
+                      id="birthday"
+                    />
+                    <i
+                      class="zmdi zmdi-calendar-note input-icon js-btn-calendar"
+                    ></i>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="input-group">
+                    <div class="rs-select2 js-select-simple select--no-search">
+                      <select name="gender" id="gender">
+                        <option disabled="disabled" selected="selected"
+                          >GENDER</option
+                        >
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                      </select>
+                      <div class="select-dropdown"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="rs-select2 js-select-simple select--no-search">
+                  <select name="class" id="guestcount">
+                    <option disabled="disabled" selected="selected"
+                      >How many Guest</option
+                    >
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>
+                  <div class="select-dropdown"></div>
+                </div>
+              </div>
+              <div class="row row-space">
+                <div class="col-2">
+                  <div class="input-group">
+                    <input
+                      class="input--style-1"
+                      type="text"
+                      placeholder="REGISTRATION CODE"
+                      name="res_code"
+                      id="registration"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="p-t-20">
+                <button class="btn btn--radius btn--green" type="submit">
+                  Submit
+                </button>
+              </div>
+            </form>
+            <div id="box"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main JS-->
+    <script src="js/index.js" defer></script>
+  </body>
+</html>
+<!-- end document-->
