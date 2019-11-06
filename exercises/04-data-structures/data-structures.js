@@ -6,7 +6,9 @@
 function createAnArray() {
   let array = ["JavaScript"]; // Do not change this line
   /* Add three more items to the array here */
-  array.push("eli", "joe", "josh");
+  array.push("Node", "Vue", "Moo");
+  array = [...array, "Node", "Vue", "Moo"];
+
   return array;
 }
 
@@ -33,13 +35,17 @@ function accessingAnArray() {
  */
 
 function addFunctionsIntoArray() {
-  const add = (a, b) => a + b;
-  const subtract = (a, b) => a - b;
+  const add = (num1, num2) => num1 + num2;
+  const subtract = (num1, num2) => num1 - num2;
   let arr = [];
   arr.push(add);
   arr.push(subtract);
+  // Method2
+  arr = [...array, add, subtract];
+
+  //Method3
+  arr = [(num1, num2) => num1 + num2, (num1, num2) => num1 - num2];
   return arr;
-  // Create and return an array here
 }
 /**
  * Loop through the array using a for loop (or for ... of loop) and return the highest number
@@ -63,9 +69,7 @@ function highestNumber(array) {
  **/
 
 function combineArray(array1, array2) {
-  array1 = ["Japan", "China", "India"];
-  array2 = ["USA", "UK"];
-  const newArr = array1.concat(array2);
+  const newArr = [...array1, ...array2];
   return newArr;
 }
 
@@ -82,45 +86,40 @@ function combineArray(array1, array2) {
  * @returns {object} with the matching id
  *
  * @example
- * */
-const people = [
-  {
-    id: 10,
-    firstName: "John",
-    lastName: "Smith"
-  },
-  {
-    id: 20,
-    firstName: "Cookie",
-    lastName: "Monster"
-  },
-  {
-    id: 30,
-    firstName: "Jane",
-    lastName: "Doe"
-  },
-  {
-    id: 40,
-    firstName: "Tom",
-    lastName: "Hardy"
-  }
-];
-
-findAndAbort(people, 20); // { id: 20, firstName: 'Cookie', lastName: 'Monster' }
-
-// Please note, the loop never iterates over the last item, because we found our object. There is no need to continue looping.
-
+ * const people = [
+*  id: 10,
+*    {
+*    firstName: "John",
+*    lastName: "Smith"
+*  },
+*  {
+*    id: 20,
+*    firstName: "Cookie",
+*    lastName: "Monster"
+*  },
+*  {
+*    id: 30,
+*    firstName: "Jane",
+*    lastName: "Doe"
+*  },
+*  {
+*    id: 40,
+*    firstName: "Tom",
+*    lastName: "Hardy"
+*  }];
+* findAndAbort(people, 20); // { id: 20, firstName: 'Cookie', lastName: 'Monster' }
+*
+ Please note, the loop never iterates over the last item, because we found our object. There is no need to continue looping.
+*/
 function findAndAbort(arr, id) {
-  let obj;
-  obj = {};
-  for (let i = 0; i < arr.length; i++) {
-    const myPerson = arr[i];
-    if (myPerson.id === id) {
-      obj = myPerson;
+  let match;
+  for (let person of arr) {
+    if (person.id === id) {
+      match = myPerson;
       break;
     }
   }
-  return obj;
+  return match;
 }
 
 /**
@@ -154,10 +153,11 @@ function removeDuplicates() {
  */
 
 function isPalindrome(str) {
-  let splitString = str.split("", true);
-  let reverseArray = splitString.reverse();
-  let joinArray = reverseArray.join("", true);
-  return joinArray;
+  const reverse = str
+    .split("")
+    .reverse()
+    .join("");
+  return reverse === str;
 }
 
 /***

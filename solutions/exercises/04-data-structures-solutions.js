@@ -108,7 +108,7 @@ function combineArray(array1, array2) {
  * }];
  * findAndAbort(people, 20); // { id: 20, firstName: 'Cookie', lastName: 'Monster' }
  *
- * // Please note, the loop never iterates over the last item, because we found our object. There is no need to continue looping.
+  // Please note, the loop never iterates over the last item, because we found our object. There is no need to continue looping.
  */
 
 function findAndAbort(arr, id) {

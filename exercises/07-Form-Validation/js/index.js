@@ -1,11 +1,18 @@
+
+
 /**
  * As a engineer, I would like to have my form validated so the information is safe and correct.
 *  
 *  All the fields should be required!!
-
+let name = document.getElementId("name")
+let gender = ;
+let birthday =:
+let guestCount =;
+let registration =;
 *  If a field is left empty on form submission, 
+return if()
 *  the form will display a red box indicating to the user that there has been an error.
-*  
+*
 *  If the form is valid, the form should submit(vanish or disappear), and the user should see a confirmation of information they filled out. (Developers Discretion on how the information is presented to the user)
 
 

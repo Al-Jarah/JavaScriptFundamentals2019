@@ -8,7 +8,9 @@
  * countNumberOfDigits(123); // 3
  * countNumberOfDigits(1000); // 4
  */
-function countNumberOfDigits(num) {}
+function countNumberOfDigits(num) {
+  return `${num}`.length;
+}
 
 /**
  * Given a number of seconds, return how long ago something happened.
@@ -24,7 +26,17 @@ function countNumberOfDigits(num) {}
  * getRelativeTime(59); // seconds ago
  * getRelativeTime(60); // minutes ago
  */
-function getRelativeTime(seconds) {}
+function getRelativeTime(seconds) {
+  const SECONDS_IN_A_DAY = 86400;
+  const SECONDS_IN_A_HOUR = 3600;
+  const SECONDS_IN_A_MINUTE = 60;
+  let message;
+  if (seconds < SECONDS_IN_A_MINUTE) message = "seconds ago";
+  else if (seconds < SECONDS_IN_A_HOUR) message = "minutes ago";
+  else if (seconds < SECONDS_IN_A_DAY) message = "hours ago";
+  else message = "days ago";
+  return message;
+}
 
 /**
  * Round to the nearest 100th decimal point.
@@ -36,7 +48,7 @@ function getRelativeTime(seconds) {}
  * roundToNearestHundredth(14.499); // 14.5
  */
 function roundToNearestHundredth(num) {
-
+return Math.round(100 * num) / 100;
 }
 
 // Ignore this. It is for the tests.

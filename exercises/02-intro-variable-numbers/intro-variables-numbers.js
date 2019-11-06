@@ -129,7 +129,7 @@ function replaceLastName(fullName, newLastName) {
 function capitalizeLastName(fullName) {
   const firstName = fullName.split(" ")[0];
   const lastName = fullName.split(" ")[1];
-  console.log(lastname);
+  // console.log(lastname);
 
   const newlastname = lastName.charAt(0).toUpperCase() + lastName.slice(1);
   return `${firstName} ${newlastname}`;
