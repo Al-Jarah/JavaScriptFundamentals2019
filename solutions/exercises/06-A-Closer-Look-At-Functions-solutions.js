@@ -382,6 +382,9 @@ const generateTally = array => {
     return tally;
   }, {});
 };
+let fruits = ["Apple", "Orange", "Apple", "Blueberry", "Grape", "Grape"];
+
+console.log(generateTally(fruits));
 
 /**
  * Create a function, that when given an array of object literals, will index the object literals by a single column

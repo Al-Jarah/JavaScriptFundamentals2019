@@ -216,7 +216,7 @@ const showFirstAndLast = arr => {
 const map = (arr, callback) => {
   let newArray = [];
   for (let i = 0; i > arr.length; i++) {
-    let result = callback(are[i], i, arr);
+    let result = callback(arr[i], i, arr);
     newArray.push(result);
   }
   return newArray;
@@ -232,7 +232,8 @@ const doubleValues = arr => {
     return num * 2;
   });
 };
-
+// Solution 2
+const doubleValues2 = arr => arr.map(num => num * 2);
 /**
  * Given an array nested with objects
  * and give the name of a shared key that is in all the nested objects,
@@ -256,6 +257,9 @@ const extractKey = (arr, key) => {
     return row[key];
   });
 };
+
+const extractKey2 = (arr, key) => arr.map(row => row[key]);
+
 /**
  * Build your own filter function
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
@@ -265,8 +269,9 @@ const extractKey = (arr, key) => {
  */
 const filter = (arr, callback) => {
   for (let i = 0; i < arr.length; i++) {
-    callback();
+    let value = callback(arr[i], i, arr) ? newArray.push(arr[i]) : "error";
   }
+  return value;
 };
 
 /**
@@ -335,24 +340,19 @@ const findUser = (arr, id) => {
  *  addItems([1,-2,-3]) // -4
  */
 const addItems = arr => {
-  let sum = arr.reduce((total, num) => {
-    return total + num;
+  return arr.reduce((sum, number) => {
+    return sum + number;
   }, 0);
-  return sum;
 };
+console.log(addItems([1, 2]));
 
 /**
  * Create a function that flattens an array (that is, it should "unnest" a nested array).
  * @param {array} array e.g. `[[1, 3], [5, 10]]`
  * @returns {array} new, flattened array e.g. `[1, 3, 5, 10]`
  */
-const flattenArray = array => {
-  let flattenedArray = array.reduce((acc, elements) => {
-    array = [...acc, ...elements];
-    return acc;
-  });
-  return flattenedArray;
-};
+const flattenArray = array =>
+  array.reduce((acc, elements) => [...acc, ...elements]);
 
 /**
  * Create a function that tallies the number of each kind of "thing" within the array
@@ -363,10 +363,10 @@ const flattenArray = array => {
  *   generateTally(generateTally); // {Apple: 2, Orange: 1, Blueberry: 1, Grape: 2}
  */
 const generateTally = array => {
-  let tally =  array.reduce((arr) =>{
-    arr[1]= arr
-    return tally
-  });
+  return array.reduce((tally, item) => {
+    tally[item] ? (tally[item] += 1) : (tally[item] = 1);
+    return tally;
+  }, {});
 };
 
 /**

@@ -6,8 +6,8 @@
 function createAnArray() {
   let array = ["JavaScript"]; // Do not change this line
   /* Add three more items to the array here */
-  array.push("Node", "Vue", "Moo");
-  array = [...array, "Node", "Vue", "Moo"];
+  // array.push("Python", "Java", "PHP");
+  array = [...array, "Python", "Vue", "Moo"];
 
   return array;
 }
@@ -37,14 +37,14 @@ function accessingAnArray() {
 function addFunctionsIntoArray() {
   const add = (num1, num2) => num1 + num2;
   const subtract = (num1, num2) => num1 - num2;
-  let arr = [];
-  arr.push(add);
-  arr.push(subtract);
+  // let arr = [];
+  // arr.push(add);
+  // arr.push(subtract);
   // Method2
   arr = [...array, add, subtract];
 
   //Method3
-  arr = [(num1, num2) => num1 + num2, (num1, num2) => num1 - num2];
+  // arr = [(num1, num2) => num1 + num2, (num1, num2) => num1 - num2];
   return arr;
 }
 /**
@@ -57,8 +57,13 @@ function addFunctionsIntoArray() {
  *
  **/
 function highestNumber(array) {
-  for (array of array) return Math.max(array);
+  let highest;
+  for (let num of array) {
+    if (num > highest || highest === undefined) highest = num;
+  }
+  return highest;
 }
+
 /**
  * Combine an array by using the spread operator
  * @param  {array} array1
@@ -115,7 +120,7 @@ function findAndAbort(arr, id) {
   let match;
   for (let person of arr) {
     if (person.id === id) {
-      match = myPerson;
+      match = person;
       break;
     }
   }
@@ -130,18 +135,6 @@ function findAndAbort(arr, id) {
  * @return {Boolean}
  *
  */
-
-/***
- * Use sets to remove duplicate elements from an array
- * @return {array}
- */
-
-function removeDuplicates() {
-  let numbers = [2, 3, 4, 4, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 5, 32, 3, 4, 5]; // You can change this line
-
-  /** Return the an array of unique values */
-  return;
-}
 
 /**
  * A palindrome is a word, phrase, or sequence that reads the same backward as forward, e.g., madam or racecar.
@@ -172,6 +165,8 @@ function removeDuplicates(numbers) {
 
   return backToArray;
 }
+/** Return the an array of unique values */
+
 /**
  * Return the value for hat inside clothes (which should be ball cap)
  * @return {string} type of hat
@@ -202,9 +197,12 @@ function createStudentObject() {
     skills: []
   };
   // Add code here
-  student = `${"Brown"}`;
+  student.firstName = "eli";
+  student.lastName = "bee";
+  student.skills = ["coding", "running", "learning"];
   return student;
 }
+
 
 /**
  * Make an object "myDog" that represents a dog. It should contain the properties
@@ -230,7 +228,6 @@ function createDogObject() {
  *  @return {array}
  */
 
-//stop here
 function returnObjectProperties() {
   // Do not change dog here
   let dog = {
@@ -240,6 +237,8 @@ function returnObjectProperties() {
     name: "Rocket"
   };
   // Add code here
+
+  return Object.keys(dog);
   // hint you need to return an array
 }
 
@@ -250,7 +249,9 @@ function returnObjectProperties() {
  * @return {object} obj1 and obj2 combined
  */
 
-function combineObject(obj1, obj2) {}
+function combineObject(obj1, obj2) {
+return [...obj1, ...obj2];
+}
 
 /**
  * Find a record with the matching id in a collection of records.
