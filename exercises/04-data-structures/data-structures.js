@@ -35,16 +35,16 @@ function accessingAnArray() {
  */
 
 function addFunctionsIntoArray() {
-  const add = (num1, num2) => num1 + num2;
-  const subtract = (num1, num2) => num1 - num2;
+  // const add = (num1, num2) => num1 + num2;
+  // const subtract = (num1, num2) => num1 - num2;
   // let arr = [];
   // arr.push(add);
   // arr.push(subtract);
-  // Method2
-  arr = [...array, add, subtract];
+  // // Method2
+  // arr = [...array, add, subtract];
 
   //Method3
-  // arr = [(num1, num2) => num1 + num2, (num1, num2) => num1 - num2];
+  arr = [(num1, num2) => num1 + num2, (num1, num2) => num1 - num2];
   return arr;
 }
 /**
@@ -203,7 +203,6 @@ function createStudentObject() {
   return student;
 }
 
-
 /**
  * Make an object "myDog" that represents a dog. It should contain the properties
  * "name", "legs", "tails" and "owners". Each should have a value.
@@ -250,7 +249,7 @@ function returnObjectProperties() {
  */
 
 function combineObject(obj1, obj2) {
-return [...obj1, ...obj2];
+  return { ...obj1, ...obj2 };
 }
 
 /**
@@ -301,8 +300,12 @@ function updateRecords(id, prop, value) {
   };
   // Only change the code after this line
   // Logic Here
+ if (value) {
+   if (property === "tracks") collection[id][property] = [...tracks, value];
+   else collection[id][property] = value;
+   return collection;
+ }
 }
-
 module.exports = {
   createAnArray,
   accessingAnArray,
