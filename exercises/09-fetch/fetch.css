@@ -1,0 +1,26 @@
+body {
+  font-family: "Syncopate", sans-serif;
+  padding: 1rem;
+  text-align: center;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+h1 {
+  font-family: "Amatic SC", sans-serif;
+  font-size: 100px;
+  padding: -20px;
+  margin: -40px;
+  color: #b0aac2;
+}
+h2 {
+  font-family: "Amatic SC", sans-serif;
+  font-size: 60px;
+}
+img {
+  display: inline-block;
+}
+.button {
+  font-weight: bold;
+}

@@ -13,7 +13,7 @@
 
 const waitUntilLater = (callback, time = 0) => {
   setTimeout(() => {
-    console.log(callback());
+    callback();
   }, time);
 };
 

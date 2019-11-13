@@ -1,0 +1,14 @@
+html,
+body {
+  height: 100%;
+}
+.blockquote {
+  border-radius: 5px;
+  font-family: "Kavivanar", cursive;
+}
+.btn {
+  font-family: "Syncopate", sans-serif;
+}
+.btn-outline-secondary {
+  background-color: #fff;
+}
